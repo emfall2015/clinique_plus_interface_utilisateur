@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Connexion </title>
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="logo">MyDashboard</div>
+
+        <nav class="menu">
+            <a routerLink="/layout/dashboard" routerLinkActive="active">
+                Dashboard
+            </a>
+
+            <a routerLink="/layout/test" routerLinkActive="active">
+                Test
+            </a>
+        </nav>
+
+        <div class="logout">
+            Déconnexion
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <h1>Mon application</h1>
+
+            <div class="user">
+                <span class="bold">Bienvenue {{ userService.recupererUser()?.nom }}  {{ userService.recupererUser()?.prenom }}   </span>
+                <div class="avatar">E</div>
+            </div>
+        </header>
+
+        <!-- C'est ici que les pages seront affichées -->
+        <router-outlet></router-outlet>
+
+    </main>
+
+</div>
+</body>
+</html>

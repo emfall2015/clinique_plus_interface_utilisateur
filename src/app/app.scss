@@ -3,7 +3,6 @@
   width: 100%;
 }
 
-
 /* Barre de navigation */
 
 nav {
@@ -184,3 +183,15 @@ hr {
   }
 
 }
+
+.sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }

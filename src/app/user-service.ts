@@ -16,7 +16,7 @@ export class UserService {
 
         next: result => {  //en cas de reussite 
           this.user.set(result)
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['layout/dashboard']);
         },
         error: err => {
           console.error(err);
