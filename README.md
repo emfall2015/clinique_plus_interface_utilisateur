@@ -9,7 +9,7 @@ Ce projet a été réalisé dans le cadre de du brief interface utilisateur avec
 
 - ✅ Page acceuil
 - ✅ Page login (utilisation de la route :http://localhost:3000/login )
-- ✅ Page dashborad
+- ✅ Page dashboard
 - ✅ Authentification
 - ✅ Administration afficher tout les patients (pour l'instant) route : http://localhost:3000/afficherPatient
 
@@ -19,17 +19,17 @@ Ce projet a été réalisé dans le cadre de du brief interface utilisateur avec
 ## 🛠️ Technologies utilisées
 
 ### Front-end
-- [Exemple] Angular
-- [Exemple] HTML / SCSS / TypeScript
+- Angular
+-  HTML / SCSS / TypeScript
 
 
 ### Back-end CliniqueSommeilApi
-- [Exemple] Express js
-- [Exemple] Node.js
-- [Exemple] API REST
+-  Express js
+-  Node.js
+-  API REST
 
 ### Base de données
-- [Exemple] MySQL
+-  MySQL
 
 
 ### Outils
@@ -48,7 +48,9 @@ npm install
 ```bash
 ng serve
 ```
+### Repository de l'api cliniquePlus
 
+https://github.com/Yassine0-php/CliniqueSomeilApi.git
 
 Le projet sera accessible à l'adresse :
 
