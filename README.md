@@ -1,60 +1,61 @@
-# CliniquePlusInterfaceUtilisateur
+# CliniquePlus Sommeil front-end
+**CliniquePlus Sommeil** est une application web front end connectée à notre Api déjà réalisée auparavant permettant aux personnels de la clinique de consulter des informations sur des patients, des résultats sur des nuits d'études et bien plus.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.3.
+Ce projet a été réalisé dans le cadre du brief interface utilisateur avec pour objectif d'utiliser Angular.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Fonctionnalités
+
+- ✅ Page accueil
+- ✅ Page login (utilisation de la route :http://localhost:3000/login )
+- ✅ Page dashboard
+- ✅ Authentification
+- ✅ Administration afficher tout les patients (pour l'instant) route : http://localhost:3000/afficherPatient
+
+---
+
+
+## 🛠️ Technologies utilisées
+
+### Front-end
+- Angular
+-  HTML / SCSS / TypeScript
+
+
+### Back-end CliniqueSommeilApi
+-  Express js
+-  Node.js
+-  API REST
+
+### Base de données
+-  MySQL
+
+
+### Outils
+- Git
+- GitHub
+- Visual Studio Code
+
+## ▶️ Lancer le projet
+
+### Front-end
+
+```bash
+npm install
+```
 
 ```bash
 ng serve
 ```
+### Repository de l'api cliniquePlus
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+https://github.com/Yassine0-php/CliniqueSomeilApi.git
 
-## Code scaffolding
+Le projet sera accessible à l'adresse :
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# clinique_plus_interface_utilisateur
+---
