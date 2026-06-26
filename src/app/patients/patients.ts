@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PatientsService } from '../patients-service';
 
 @Component({
@@ -10,9 +10,11 @@ import { PatientsService } from '../patients-service';
 export class Patients {
   constructor(private patientsService : PatientsService) { };
   
+  patients = signal<any | null>(null);
+
   listerPatients() {
     this.patientsService.getPatients().subscribe({
-      next: res => console.log(res),
+      next: (res: {patients? : []}) => {console.log(res), this.patients.set(res["patients"])},
       error: err => console.error(err)
     });
   }

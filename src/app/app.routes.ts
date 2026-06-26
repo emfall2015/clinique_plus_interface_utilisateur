@@ -7,6 +7,6 @@ import { Patients } from './patients/patients';
 export const routes: Routes = [
     { path: '', component: Accueil },
     { path: 'dashboard', component: Dashboard },
-    { path: 'login', component: Login }
+    { path: 'login', component: Login },
     { path: 'patients', component: Patients }
 ]
