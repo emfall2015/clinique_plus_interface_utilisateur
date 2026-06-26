@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user-service';
+import { Patients } from '../patients/patients';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [Patients],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
