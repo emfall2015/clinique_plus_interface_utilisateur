@@ -1,13 +1,13 @@
 # CliniquePlus Sommeil front-end
-**CliniquePlus Sommeil** est une application web front end connecté a notre Api deja réaliser auparavant permettant aux personnel de la clinique de consulter des informations sur des patient, des résultat sur des nuits d'études et bien plus.
+**CliniquePlus Sommeil** est une application web front end connectée à notre Api déjà réalisée auparavant permettant aux personnels de la clinique de consulter des informations sur des patients, des résultats sur des nuits d'études et bien plus.
 
-Ce projet a été réalisé dans le cadre de du brief interface utilisateur avec pour objectif d'utiliser Angular.
+Ce projet a été réalisé dans le cadre du brief interface utilisateur avec pour objectif d'utiliser Angular.
 
 ---
 
 ## 🚀 Fonctionnalités
 
-- ✅ Page acceuil
+- ✅ Page accueil
 - ✅ Page login (utilisation de la route :http://localhost:3000/login )
 - ✅ Page dashboard
 - ✅ Authentification
