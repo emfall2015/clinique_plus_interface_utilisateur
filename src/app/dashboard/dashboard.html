@@ -1,68 +1,79 @@
-<!DOCTYPE html>
-<html lang="fr">
+<section class="dashboard">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
+    <h1>
+        Bienvenue dans CliniquePlus
+    </h1>
 
-<body>
+    <p class="subtitle">
+        Gérez vos informations et accédez rapidement à vos services.
+    </p>
 
-    <div class="app">
+    <div class="cards">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+        <div class="card">
 
-            <div class="logo"> MyDashboard</div>
-
-            <nav class="menu">
-               
-                <a routerLink="dashboard">Dashboard</a>
-            </nav>
-
-            <div class="logout">
-                Déconnexion
+            <div class="icon">
+                👤  
             </div>
 
-        </aside>
+            <h2>Informations utilisateurs</h2>
 
-        <!-- MAIN -->
-        <main class="main">
+            <div class="infos">
 
-            <header class="topbar">
-                <h1>Dashboard</h1>
+                <p><strong>Nom :</strong> {{ userService.recupererUser()?.nom }}</p>
 
-                <div class="user">
-                    <span> Bonjour Thomas Estrii </span>
-                    <div class="avatar">E</div>
-                </div>
-            </header>
+                <p><strong>Prénom :</strong> {{ userService.recupererUser()?.prenom }}</p>
 
-            <section class="grid">
+                <p><strong>Email :</strong> {{ userService.recupererUser()?.email }}</p>
 
-                <div class="box">
-                    <h3>Informations utilisateurs </h3>
-                    <ul>
-                        <li> 
-                           Id : {{  userService.recupererUser()?.id_utilisateur }}
-                        </li>
-                         <li> 
-                          Role :  {{  userService.recupererUser()?.role }}
-                        </li>
-                         <li> 
-                          Email : thomas.estrii@clinique-sommeil-arles.fr
-                        </li>
-                    </ul>
-                </div>
+                <p><strong>Téléphone :</strong> {{ userService.recupererUser()?.telephone }}</p>
 
-            </section>
+                <p><strong>Rôle :</strong> {{ userService.recupererUser()?.role }}</p>
 
-        </main>
+            </div>
+
+            <button>
+                Modifier mes informations
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">
+                📋
+            </div>
+
+            <h2>Accès rapide</h2>
+
+            <p>
+                Utilisez le menu à gauche pour naviguer dans CliniquePlus.
+            </p>
+
+            <!-- <button>
+                Explorer
+            </button> -->
+
+        </div>
 
     </div>
 
-</body>
 
-</html>
+
+    <div class="banner">
+
+        🌙
+
+        <div>
+
+            <h2>Un sommeil meilleur</h2>
+
+            <p>
+                Analyse, diagnostic et accompagnement personnalisé.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
