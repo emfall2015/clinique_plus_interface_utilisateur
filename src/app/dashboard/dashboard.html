@@ -1,26 +1,78 @@
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Connexion </title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
+<section class="dashboard">
 
-<section class="grid">
+    <h1>
+        Bienvenue dans CliniquePlus
+    </h1>
 
-    <div class="box">
+    <p class="subtitle">
+        Gérez vos informations et accédez rapidement à vos services.
+    </p>
 
-        <h3> Informations utilisateurs </h3>
+    <div class="cards">
 
-        <ul>
-            
-            <li>Nom : {{ userService.recupererUser()?.nom }}</li>
-            <li>Prenom : {{ userService.recupererUser()?.prenom }}</li>
-            <li>Telephone : {{ userService.recupererUser()?.telephone }}</li>
-            <li>Rôle : {{ userService.recupererUser()?.role }}</li>
-            <li>Email : {{ userService.recupererUser()?.email }}</li>
-             <li> Date embauche : {{ userService.recupererUser()?.date_embauche }}</li>
-            <li> Actif : {{ userService.recupererUser()?.actif }}</li>
-        </ul>
+        <div class="card">
+
+            <div class="icon">
+                👤  
+            </div>
+
+            <h2>Informations utilisateurs</h2>
+
+            <div class="infos">
+
+                <p><strong>Nom :</strong> {{ userService.recupererUser()?.nom }}</p>
+
+                <p><strong>Prénom :</strong> {{ userService.recupererUser()?.prenom }}</p>
+
+                <p><strong>Email :</strong> {{ userService.recupererUser()?.email }}</p>
+
+                <p><strong>Téléphone :</strong> {{ userService.recupererUser()?.telephone }}</p>
+
+                <p><strong>Rôle :</strong> {{ userService.recupererUser()?.role }}</p>
+
+            </div>
+
+            <button>
+                Modifier mes informations
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">
+                📋
+            </div>
+
+            <h2>Accès rapide</h2>
+
+            <p>
+                Utilisez le menu à gauche pour naviguer dans CliniquePlus.
+            </p>
+
+            <!-- <button>
+                Explorer
+            </button> -->
+
+        </div>
+
+    </div>
+
+
+
+    <div class="banner">
+
+        🌙
+
+        <div>
+
+            <h2>Un sommeil meilleur</h2>
+
+            <p>
+                Analyse, diagnostic et accompagnement personnalisé.
+            </p>
+
+        </div>
 
     </div>
 

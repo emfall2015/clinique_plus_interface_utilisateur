@@ -1,52 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Connexion </title>
-    <link rel="stylesheet" href="layout.css">
-</head>
-
-<body>
-<div class="app">
+<div class="layout">
 
     <aside class="sidebar">
 
-        <div class="logo">MyDashboard</div>
-
-        <nav class="menu">
-            <a routerLink="/layout/dashboard" routerLinkActive="active">
-                Dashboard
-            </a>
-
-            <a routerLink="/layout/test" routerLinkActive="active">
-                Test
-            </a>
-        </nav>
-
-        <div class="logout">
-            Déconnexion
+        <div class="logo">
+            CliniquePlus
         </div>
 
+        <nav>
+
+            <a routerLink="/layout/dashboard" routerLinkActive="active">
+                <span class="material-icons">dashboard</span> Dashboard
+            </a>
+
+            <a routerLink="/layout/resultats-nuits" routerLinkActive="active">
+                <span class="material-icons">assignment</span> Résultats nuits
+            </a>
+
+            <a routerLink="/layout/patients" routerLinkActive="active">
+                <span class="material-icons">groups</span> Patients
+            </a>
+            <a routerLink="" routerLinkActive="active">
+                <span class="material-icons">logout</span> Déconnexion
+            </a>
+        </nav>
     </aside>
 
-    <main class="main">
+    <main class="content">
 
         <header class="topbar">
-            <h1>Mon application</h1>
+
+            <div></div>
 
             <div class="user">
-                <span class="bold">Bienvenue {{ userService.recupererUser()?.nom }}  {{ userService.recupererUser()?.prenom }}   </span>
-                <div class="avatar">E</div>
+
+                <span>
+
+                    {{ userService.recupererUser()?.nom }}
+                    {{ userService.recupererUser()?.prenom }}
+                </span>
+
+                <div class="avatar">
+                    {{ userService.recupererUser()?.prenom.charAt(0).toUpperCase() }}
+                </div>
+
             </div>
+
         </header>
 
-        <!-- C'est ici que les pages seront affichées -->
         <router-outlet></router-outlet>
 
     </main>
 
 </div>
-</body>
-</html>
