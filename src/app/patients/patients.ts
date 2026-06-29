@@ -14,7 +14,9 @@ export class Patients {
 
   listerPatients() {
     this.patientsService.getPatients().subscribe({
-      next: (res: {patients? : []}) => {console.log(res), this.patients.set(res["patients"])},
+      next: (res: {patients? : []}) => {
+        this.patients.set(res["patients"]);
+      },
       error: err => console.error(err)
     });
   }

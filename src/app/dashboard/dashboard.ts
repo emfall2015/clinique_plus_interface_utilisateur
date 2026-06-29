@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user-service';
-import { Patients } from '../patients/patients';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Patients],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

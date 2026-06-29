@@ -3,7 +3,6 @@
   width: 100%;
 }
 
-
 /* Barre de navigation */
 
 nav {
@@ -183,4 +182,60 @@ hr {
 
   }
 
+}
+
+.sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+/*
+  .navbar{
+
+    height:80px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}*/
+
+.nav-center{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.nav-center a{
+
+    text-decoration:none;
+
+    color:#222;
+
+    font-weight:600;
+}
+
+.btn-login{
+
+    background:linear-gradient(90deg,#2f63f2,#43b7f7);
+
+    color:white!important;
+
+    padding:15px 40px;
+
+    border-radius:40px;
 }
