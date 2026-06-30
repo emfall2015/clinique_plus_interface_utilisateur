@@ -1,3 +1,9 @@
 <h1> Résultats Nuits </h1>
 
 <p>Contenu de la page Résultats Nuits .</p>
+
+<select name="" id="" (click)="listerMedecins()">
+    <option> Choisir le médecin validateur </option>
+     @for (medecin of medecins(); track medecin.id) {
+    <option> {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }} </option>}
+</select>
