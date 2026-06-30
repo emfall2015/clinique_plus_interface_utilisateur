@@ -2,11 +2,44 @@
 
 <p>Contenu de la page Résultats Nuits .</p>
 
+<select id="id_nuit" (click)="listerNuitsNonTraitees()">
+    <option> Choisir l'identifiant de la nuit </option>
+     @for (nuit of NuitsNontraitees(); track nuit.id) {
+    <option> {{ nuit.id_nuit }}  </option>
+  }
+</select>
+<br>
+
+  <!-- @if (NuitsNontraitees().length === 0) {
+  <p>Aucune nuit trouvée.</p>
+} @else {
+  <table>
+    <thead>
+      <tr>
+        <th>id nuit</th>
+        <th>date nuit</th>
+        <th>type d'études</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (nuit of NuitsNontraitees(); track nuit.id_nuit) {
+        <tr>
+          <td>{{ nuit.id_nuit }}</td>
+          <td>{{ NuitsNontraitees.date_nuit }}</td>
+          <td>{{ NuitsNontraitees.type_etude }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} -->
+
+
 <select name="" id="" (click)="listerMedecins()">
     <option> Choisir le médecin validateur </option>
      @for (medecin of medecins(); track medecin.id) {
     <option> {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }} </option>}
 </select>
+
 <div class="commentaire-container">
   <label for="commentaire">Commentaire :</label>
 
@@ -18,3 +51,6 @@
   </textarea>
   <button>Envoyer</button>
 </div>
+
+
+

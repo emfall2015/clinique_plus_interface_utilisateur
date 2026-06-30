@@ -22,5 +22,19 @@ export class ResultatsNuits {
       error: err => console.error(err)
     });
   }
+  
+  NuitsNontraitees= signal<any | null>(null);
+
+  listerNuitsNonTraitees() {
+    this.nuitService.getNuitsNonTraitees().subscribe({
+      next: (res: {NuitsNontraitees? : [{}]}) => {
+      
+        this.NuitsNontraitees.set(res["NuitsNontraitees"]);
+        console.log(this.NuitsNontraitees);
+      },
+      error: err => console.error(err)
+    });
+  }
+
 
 }

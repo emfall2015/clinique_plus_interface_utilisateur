@@ -8,4 +8,8 @@ export class NuitService {
     getMedecins(){
     return this.http.get('http://localhost:3000/medecins_validateurs');
     }
+
+    getNuitsNonTraitees(){
+    return this.http.get('http://localhost:3000/nuitEtude');
+    }
 }
