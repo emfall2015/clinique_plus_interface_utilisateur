@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { NuitService } from '../nuit-service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,5 +9,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './resultats_nuits.scss',
 })
 export class ResultatsNuits {
-   commentaire: string = '';
+  constructor(private nuitService : NuitService) { };
+
+  medecins = signal<any | null>(null);
+  commentaire: string = '';
+
+  listerMedecins() {
+    this.nuitService.getMedecins().subscribe({
+      next: (res: {medecins? : []}) => {
+        this.medecins.set(res["medecins"]);
+      },
+      error: err => console.error(err)
+    });
+  }
+
 }

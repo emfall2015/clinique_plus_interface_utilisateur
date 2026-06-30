@@ -2,6 +2,11 @@
 
 <p>Contenu de la page Résultats Nuits .</p>
 
+<select name="" id="" (click)="listerMedecins()">
+    <option> Choisir le médecin validateur </option>
+     @for (medecin of medecins(); track medecin.id) {
+    <option> {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }} </option>}
+</select>
 <div class="commentaire-container">
   <label for="commentaire">Commentaire :</label>
 
