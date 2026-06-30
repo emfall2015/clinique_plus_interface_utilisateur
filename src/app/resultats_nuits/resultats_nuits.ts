@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-resultats-nuits',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './resultats_nuits.html',
-  styleUrl: './resultats_nuits.css',
+  styleUrl: './resultats_nuits.scss',
 })
-export class ResultatsNuits {}
+export class ResultatsNuits {
+   commentaire: string = '';
+}
