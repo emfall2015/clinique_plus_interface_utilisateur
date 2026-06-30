@@ -7,3 +7,14 @@
      @for (medecin of medecins(); track medecin.id) {
     <option> {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }} </option>}
 </select>
+<div class="commentaire-container">
+  <label for="commentaire">Commentaire :</label>
+
+  <textarea
+    id="commentaire"
+    [(ngModel)]="commentaire"
+    rows="5"
+    placeholder="Saisissez votre commentaire...">
+  </textarea>
+  <button>Envoyer</button>
+</div>
