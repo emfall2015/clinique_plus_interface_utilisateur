@@ -9,10 +9,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './resultats_nuits.scss',
 })
 export class ResultatsNuits {
+
   constructor(private nuitService : NuitService) { };
+   commentaire: string = '';
+
+   ouvrirAppli(){
+        window.open('http://localhost:8501/','_blank')
+    }
+
+  
 
   medecins = signal<any | null>(null);
-  commentaire: string = '';
+  
 
   listerMedecins() {
     this.nuitService.getMedecins().subscribe({
@@ -22,5 +30,6 @@ export class ResultatsNuits {
       error: err => console.error(err)
     });
   }
+
 
 }
