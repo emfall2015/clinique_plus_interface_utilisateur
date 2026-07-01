@@ -3,6 +3,11 @@
 <p>Application permettant de génerer un pdf sur un patient:</p>
 <button (click)="ouvrirAppli()">ouvrir application</button>
 
+<select name="" id="" (click)="listerMedecins()">
+    <option> Choisir le médecin validateur </option>
+     @for (medecin of medecins(); track medecin.id) {
+    <option> {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }} </option>}
+</select>
 <div class="commentaire-container">
   <label for="commentaire">Commentaire :</label>
 
@@ -14,4 +19,7 @@
   </textarea>
   <button>Envoyer</button>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9ee36a9f14056c78475cd2234db6e1be94dc5fdb
