@@ -5,15 +5,15 @@
 <select (click)="listerNuitsNonTraitees()">
     <option> Choisir l'identifiant de la nuit </option>
      @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
-    <option> {{ NuitsNontraitees() }}  </option>
+    <option> {{ nuit_etude.id_nuit }}  </option>
   }
 </select>
 
-  @if (NuitsNontraitees().length === 0) {
+  <!-- @if (NuitsNontraitees().length === 0) {
   <p>Aucune nuit trouvée.</p>
-}
+} -->
 
-@else {
+<!-- @else {
   <table class="NuitsNontraitees-table">
     <thead>
       <tr>
@@ -32,7 +32,7 @@
       }
     </tbody>
   </table>
-}
+} -->
 
 <select name="" id="" (click)="listerMedecins()">
     <option> Choisir le médecin validateur </option>
