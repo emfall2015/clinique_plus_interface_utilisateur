@@ -2,37 +2,37 @@
 
 <p>Contenu de la page Résultats Nuits .</p>
 
-<select id="id_nuit" (click)="listerNuitsNonTraitees()">
+<select (click)="listerNuitsNonTraitees()">
     <option> Choisir l'identifiant de la nuit </option>
-     @for (nuit of NuitsNontraitees(); track nuit.id) {
-    <option> {{ nuit.id_nuit }}  </option>
+     @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
+    <option> {{ NuitsNontraitees() }}  </option>
   }
 </select>
-<br>
 
-  <!-- @if (NuitsNontraitees().length === 0) {
+  @if (NuitsNontraitees().length === 0) {
   <p>Aucune nuit trouvée.</p>
-} @else {
-  <table>
+}
+
+@else {
+  <table class="NuitsNontraitees-table">
     <thead>
       <tr>
         <th>id nuit</th>
-        <th>date nuit</th>
+        <th>date</th>
         <th>type d'études</th>
       </tr>
     </thead>
     <tbody>
-      @for (nuit of NuitsNontraitees(); track nuit.id_nuit) {
+      @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id) {
         <tr>
-          <td>{{ nuit.id_nuit }}</td>
-          <td>{{ NuitsNontraitees.date_nuit }}</td>
-          <td>{{ NuitsNontraitees.type_etude }}</td>
+          <td>{{ nuit_etude.id_nuit }}</td>
+          <td>{{ nuit_etude.date_nuit }}</td>
+          <td>{{ nuit_etude.type_etude }}</td>
         </tr>
       }
     </tbody>
   </table>
-} -->
-
+}
 
 <select name="" id="" (click)="listerMedecins()">
     <option> Choisir le médecin validateur </option>
