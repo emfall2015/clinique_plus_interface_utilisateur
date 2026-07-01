@@ -1,71 +1,327 @@
-.commentaire-container {
-  max-width: 600px;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+$primary-color: #4f46e5;
+$secondary-color: #6366f1;
+$background-color: #f8fafc;
+$text-color: #1e293b;
+$border-color: #e2e8f0;
+$white: #ffffff;
+$success-color: #10b981;
+
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 40px;
+  background: $background-color;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: $text-color;
+  position: relative;
 }
 
-label {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
 
-textarea {
-  width: 100%;
-  min-height: 180px;
-  padding: 12px 15px;
-  font-size: 15px;
-  font-family: inherit;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  resize: vertical;
-  transition: all 0.2s ease;
-  box-sizing: border-box;
-}
+// Bouton Ouvrir application uniquement
+.btn-application {
 
-textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-}
+  position: absolute;
 
-button {
-  align-self: flex-end;
-  padding: 12px 24px;
-  background-color: #2563eb;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
+  top: 40px;
+  right: 40px;
+
+
+  background: linear-gradient(
+    135deg,
+    $primary-color,
+    $secondary-color
+  );
+
+
+  color: white;
+
   border: none;
-  border-radius: 8px;
+
+  padding: 15px 32px;
+
+  border-radius: 12px;
+
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+
   cursor: pointer;
-  transition: all 0.2s ease;
+
+
+  transition: 0.3s ease;
+
+
+  box-shadow:
+    0 8px 20px rgba(79,70,229,0.25);
+
+
+
+  &:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 12px 25px rgba(79,70,229,0.35);
+  }
 }
 
-button:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-2px);
+
+
+// Titre
+h1 {
+
+  font-size: 2.3rem;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: $primary-color;
+
+
+  &::after {
+
+    content: "";
+
+    display: block;
+
+    width: 80px;
+
+    height: 4px;
+
+    margin-top: 12px;
+
+    background: linear-gradient(
+      90deg,
+      $primary-color,
+      $secondary-color
+    );
+
+    border-radius: 10px;
+  }
 }
 
-button:active {
-  transform: translateY(0);
+
+
+p {
+
+  color: #64748b;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 30px;
 }
 
-button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-  transform: none;
+
+
+// Select médecin
+select {
+
+  width: 100%;
+
+  max-width: 550px;
+
+
+  padding: 15px 18px;
+
+
+  border-radius: 12px;
+
+  border: 1px solid $border-color;
+
+
+  background: white;
+
+
+  font-size: 15px;
+
+
+  cursor: pointer;
+
+
+  outline: none;
+
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,0.05);
+
+
+
+  &:focus {
+
+    border-color: $primary-color;
+
+
+    box-shadow:
+      0 0 0 4px rgba(79,70,229,0.15);
+  }
 }
 
-@media (max-width: 768px) {
-  .commentaire-container {
-    margin: 20px;
+
+
+
+// Zone commentaire
+.commentaire-container {
+
+  margin-top: 35px;
+
+
+  max-width: 750px;
+
+
+  background: $white;
+
+
+  padding: 30px;
+
+
+  border-radius: 18px;
+
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.07);
+
+
+
+  label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-weight: 600;
+
+    font-size: 17px;
   }
 
-  button {
+
+
+  textarea {
+
     width: 100%;
-    align-self: stretch;
+
+
+    min-height: 140px;
+
+
+    padding: 16px;
+
+
+    border-radius: 12px;
+
+
+    border: 1px solid $border-color;
+
+
+    font-size: 15px;
+
+
+    resize: vertical;
+
+
+
+    &:focus {
+
+      outline: none;
+
+
+      border-color: $primary-color;
+
+
+      box-shadow:
+      0 0 0 4px rgba(79,70,229,0.15);
+    }
+  }
+
+
+
+  // Bouton envoyer reste ici
+  .btn-envoyer {
+
+    margin-top: 20px;
+
+
+    background: linear-gradient(
+      135deg,
+      #059669,
+      $success-color
+    );
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:13px 28px;
+
+
+    border-radius:10px;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    transition:0.3s ease;
+
+
+
+    &:hover {
+
+      transform:translateY(-2px);
+
+
+      box-shadow:
+      0 8px 20px rgba(16,185,129,0.3);
+    }
+  }
+}
+
+
+
+
+@media(max-width:768px) {
+
+
+  :host {
+
+    padding:25px;
+  }
+
+
+
+  .btn-application {
+
+    position:static;
+
+    width:100%;
+
+    margin-bottom:30px;
+  }
+
+
+
+  h1 {
+
+    font-size:1.8rem;
+  }
+
+
+  select {
+
+    max-width:100%;
+  }
+
+
+  .commentaire-container {
+
+    padding:20px;
   }
 }
