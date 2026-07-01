@@ -1,3 +1,85 @@
+<<<<<<< HEAD
 <h1>Dashboard</h1>
 
 <p>Bienvenue ! Vous êtes connecté.</p>
+=======
+<section class="dashboard">
+
+    <h1>
+        Bienvenue dans CliniquePlus
+    </h1>
+
+    <p class="subtitle">
+        Gérez vos informations et accédez rapidement à vos services.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">
+                👤  
+            </div>
+
+            <h2>Informations utilisateurs</h2>
+
+            <div class="infos">
+
+                <p><strong>Nom :</strong> {{ userService.recupererUser()?.nom }}</p>
+
+                <p><strong>Prénom :</strong> {{ userService.recupererUser()?.prenom }}</p>
+
+                <p><strong>Email :</strong> {{ userService.recupererUser()?.email }}</p>
+
+                <p><strong>Téléphone :</strong> {{ userService.recupererUser()?.telephone }}</p>
+
+                <p><strong>Rôle :</strong> {{ userService.recupererUser()?.role }}</p>
+
+            </div>
+
+            <button>
+                Modifier mes informations
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">
+                📋
+            </div>
+
+            <h2>Accès rapide</h2>
+
+            <p>
+                Utilisez le menu à gauche pour naviguer dans CliniquePlus.
+            </p>
+
+            <!-- <button>
+                Explorer
+            </button> -->
+
+        </div>
+
+    </div>
+
+
+
+    <div class="banner">
+
+        🌙
+
+        <div>
+
+            <h2>Un sommeil meilleur</h2>
+
+            <p>
+                Analyse, diagnostic et accompagnement personnalisé.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+>>>>>>> 72d40bca180b9c65f4b3603167c9e769f3fa17a7
