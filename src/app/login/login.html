@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Page de connexion</h2>
+
+    <form (ngSubmit)="login()">
+      <div class="input-group">
+        <label for="email">Email</label> 
+        <input type="email" [(ngModel)]="email" name="email" id="email" placeholder="Entrez votre email" required />
+      </div>
+
+      <div class="input-group">
+        <label for="mdp">mdp</label>
+        <input type="password" [(ngModel)]="mdp" name="mdp" id="mdp" placeholder="Entrez votre mot de passe" required />
+      </div>
+      <button type="submit" class="login-btn">Se connecter</button>
+    </form>
+
+    
+  </div>
+
+</body>
+</html>
