@@ -9,4 +9,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class ResultatsNuits {
    commentaire: string = '';
+
+   ouvrirAppli(){
+        window.open('http://localhost:8501/','_blank')
+    }
 }
