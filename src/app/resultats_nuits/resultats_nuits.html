@@ -7,6 +7,14 @@
 </button>
 
 
+<select (click)="listerNuitsNonTraitees()">
+    <option> Choisir l'identifiant de la nuit </option>
+     @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
+    <option> {{ nuit_etude.id_nuit }}  </option>
+  }
+</select>
+<br>
+<br>
 <select name="" id="" (click)="listerMedecins()">
     <option> Choisir le médecin validateur </option>
 
@@ -28,9 +36,14 @@
     rows="5"
     placeholder="Saisissez votre commentaire...">
   </textarea>
+  <button>Envoyer</button>
+</div>
+
+
+
 
   <button class="btn-envoyer">
     Envoyer
   </button>
 
-</div>
+

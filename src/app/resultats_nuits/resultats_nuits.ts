@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { NuitService } from '../nuit-service';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-resultats-nuits',
-  imports: [FormsModule],
+  imports: [FormsModule,RouterOutlet,RouterLink],
   templateUrl: './resultats_nuits.html',
   styleUrl: './resultats_nuits.scss',
 })
@@ -30,6 +31,19 @@ export class ResultatsNuits {
       error: err => console.error(err)
     });
   }
+  
+  NuitsNontraitees= signal<any | null>(null);
 
+  listerNuitsNonTraitees() {
+    this.nuitService.getNuitsNonTraitees().subscribe({
+      next: (res: {nuit_etude? : []}) => {
+        this.NuitsNontraitees.set(res["nuit_etude"]);
+       console.log(res["nuit_etude"]);
+      },
+      error: err => console.error(err)
+    });
+  }
 
 }
+
+
