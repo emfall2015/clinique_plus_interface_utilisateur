@@ -36,8 +36,9 @@ export class ResultatsNuits {
 
   listerNuitsNonTraitees() {
     this.nuitService.getNuitsNonTraitees().subscribe({
-      next: (res: {NuitsNontraitees? : []}) => {
-        this.NuitsNontraitees.set(res["NuitsNontraitees"]);;
+      next: (res: {nuit_etude? : []}) => {
+        this.NuitsNontraitees.set(res["nuit_etude"]);
+       console.log(res["nuit_etude"]);
       },
       error: err => console.error(err)
     });

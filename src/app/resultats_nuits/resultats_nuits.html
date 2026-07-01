@@ -13,32 +13,8 @@
     <option> {{ nuit_etude.id_nuit }}  </option>
   }
 </select>
-
-  <!-- @if (NuitsNontraitees().length === 0) {
-  <p>Aucune nuit trouvée.</p>
-} -->
-
-<!-- @else {
-  <table class="NuitsNontraitees-table">
-    <thead>
-      <tr>
-        <th>id nuit</th>
-        <th>date</th>
-        <th>type d'études</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id) {
-        <tr>
-          <td>{{ nuit_etude.id_nuit }}</td>
-          <td>{{ nuit_etude.date_nuit }}</td>
-          <td>{{ nuit_etude.type_etude }}</td>
-        </tr>
-      }
-    </tbody>
-  </table>
-} -->
-
+<br>
+<br>
 <select name="" id="" (click)="listerMedecins()">
     <option> Choisir le médecin validateur </option>
 
@@ -70,4 +46,4 @@
     Envoyer
   </button>
 
-</div>
+
