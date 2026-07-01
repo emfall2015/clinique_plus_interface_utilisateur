@@ -1,34 +1,47 @@
-<h1> Résultats Nuits </h1>
+<h1>Résultats Nuits</h1>
 
-<p>Application permettant de génerer un pdf sur un patient:</p>
+<p>Application permettant de générer un PDF sur un patient :</p>
 
 <button class="btn-application" (click)="ouvrirAppli()">
-  ouvrir application
+  Ouvrir l'application
 </button>
 
+<br><br>
+<label>Choisissez une nuit</label>
+<br>
+<select
+  (focus)="listerNuitsNonTraitees()"
+  [(ngModel)]="inputIdNuit">
 
-<select (click)="listerNuitsNonTraitees()">
-    <option> Choisir l'identifiant de la nuit </option>
-     @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
-    <option> {{ nuit_etude.id_nuit }}  </option>
+  <option value="">Choisir l'identifiant de la nuit</option>
+
+  @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
+    <option [value]="nuit_etude.id_nuit">
+      {{ nuit_etude.id_nuit }}
+    </option>
   }
 </select>
-<br>
-<br>
-<select name="" id="" (click)="listerMedecins()">
-    <option> Choisir le médecin validateur </option>
 
-    @for (medecin of medecins(); track medecin.id) {
-      <option>
-        {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }}
-      </option>
-    }
+<br><br>
+<label>Choisissez un medecin </label>
+<br>
+<select
+  (focus)="listerMedecins()"
+  [(ngModel)]="inputIdMedecin">
+
+  <option value="">Choisir le médecin validateur</option>
+
+  @for (medecin of medecins(); track medecin.id) {
+    <option [value]="medecin.id_personnel">
+      {{ medecin.nom }} {{ medecin.prenom }} - {{ medecin.specialite }}
+    </option>
+  }
 </select>
 
+<br><br>
 
 <div class="commentaire-container">
-
-  <label for="commentaire">Commentaire :</label>
+  <label for="commentaire">Ajouter un Commentaire :</label>
 
   <textarea
     id="commentaire"
@@ -36,14 +49,15 @@
     rows="5"
     placeholder="Saisissez votre commentaire...">
   </textarea>
-  <button>Envoyer</button>
 </div>
 
+<br>
 
-
-
-  <button class="btn-envoyer">
-    Envoyer
-  </button>
-
-
+<button
+  class="btn-envoyer"
+  (click)="lancerEtl(inputIdNuit, inputIdMedecin, commentaire)">
+  Envoyer
+</button>
+<div class="message-resultat">
+  <p>{{ result()?.message  }}</p> 
+</div>
