@@ -1,14 +1,25 @@
 <h1> Résultats Nuits </h1>
 
 <p>Application permettant de génerer un pdf sur un patient:</p>
-<button (click)="ouvrirAppli()">ouvrir application</button>
+
+<button class="btn-application" (click)="ouvrirAppli()">
+  ouvrir application
+</button>
+
 
 <select name="" id="" (click)="listerMedecins()">
     <option> Choisir le médecin validateur </option>
-     @for (medecin of medecins(); track medecin.id) {
-    <option> {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }} </option>}
+
+    @for (medecin of medecins(); track medecin.id) {
+      <option>
+        {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }}
+      </option>
+    }
 </select>
+
+
 <div class="commentaire-container">
+
   <label for="commentaire">Commentaire :</label>
 
   <textarea
@@ -17,6 +28,9 @@
     rows="5"
     placeholder="Saisissez votre commentaire...">
   </textarea>
-  <button>Envoyer</button>
-</div>
 
+  <button class="btn-envoyer">
+    Envoyer
+  </button>
+
+</div>
