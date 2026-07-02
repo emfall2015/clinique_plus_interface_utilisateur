@@ -1,49 +1,87 @@
-<h1> Résultats Nuits </h1>
+<h1>Résultats Nuits</h1>
 
-<p>Application permettant de génerer un pdf sur un patient:</p>
+<p>
+ Application Opérateur 
+</p>
 
+<!-- Bouton application -->
 <button class="btn-application" (click)="ouvrirAppli()">
-  ouvrir application
+  Résultats des Nuits d'Étude
 </button>
 
+<!-- =========================
+     FORMULAIRE PRINCIPAL
+========================= -->
+<section class="form-section">
 
-<select (click)="listerNuitsNonTraitees()">
-    <option> Choisir l'identifiant de la nuit </option>
-     @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
-    <option> {{ nuit_etude.id_nuit }}  </option>
-  }
-</select>
-<br>
-<br>
-<select name="" id="" (click)="listerMedecins()">
-    <option> Choisir le médecin validateur </option>
+  <!-- Nuit -->
+  <label for="nuitSelect"> Selectionner une nuit à traiter </label>
+  <select
+    id="nuitSelect"
+    (focus)="listerNuitsNonTraitees()"
+    [(ngModel)]="inputIdNuit">
 
-    @for (medecin of medecins(); track medecin.id) {
-      <option>
-        {{ medecin.nom}} {{ medecin.prenom }} - {{medecin.specialite }}
+    <option value="">Choisir l'identifiant de la nuit</option>
+
+    @for (nuit_etude of NuitsNontraitees(); track nuit_etude.id_nuit) {
+      <option [value]="nuit_etude.id_nuit">
+        Nuit {{ nuit_etude.id_nuit }}
       </option>
     }
-</select>
+  </select>
 
+  <!-- Médecin -->
+  <label for="medecinSelect">Sélectionner un médecin validateur </label>
+  <select
+    id="medecinSelect"
+    (focus)="listerMedecins()"
+    [(ngModel)]="inputIdMedecin">
 
-<div class="commentaire-container">
+    <option value="">Choisir le médecin validateur</option>
 
-  <label for="commentaire">Commentaire :</label>
+    @for (medecin of medecins(); track medecin.id) {
+      <option [value]="medecin.id_personnel">
+        {{ medecin.nom }} {{ medecin.prenom }} - {{ medecin.specialite }}
+      </option>
+    }
+  </select>
 
-  <textarea
-    id="commentaire"
-    [(ngModel)]="commentaire"
-    rows="5"
-    placeholder="Saisissez votre commentaire...">
-  </textarea>
-  <button>Envoyer</button>
-</div>
+  <!-- Commentaire -->
+  <div class="commentaire-container">
 
+    <label for="commentaire"> Saisir un commentaire</label>
 
+    <textarea
+      id="commentaire"
+      [(ngModel)]="commentaire"
+      rows="5"
+      placeholder="Saisissez votre commentaire...">
+    </textarea>
 
+    <button
+  class="btn-envoyer"
+  (click)="lancerEtl(inputIdNuit, inputIdMedecin, commentaire)"
+  [disabled]="isLoading">
 
-  <button class="btn-envoyer">
-    Envoyer
-  </button>
+  <span *ngIf="!isLoading">
+    Déclenchement ETL 1
+  </span>
 
+  <span *ngIf="isLoading" class="loader-container">
+    <span class="spinner"></span>
+    Traitement en cours ...
+  </span>
 
+</button>
+
+  </div>
+
+</section>
+
+<!-- Message retour -->
+<p
+  *ngIf="result() as res"
+  [ngClass]="res.success ? 'message-resultat-success' : 'message-resultat-fail'">
+
+  {{ res.message }}
+</p>
