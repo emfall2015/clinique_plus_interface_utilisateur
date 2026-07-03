@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { NuitService } from '../nuit-service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -38,41 +38,42 @@ export class ResultatsNuits {
   }
   
   NuitsNontraitees= signal<any | null>(null);
-
   listerNuitsNonTraitees() {
     this.nuitService.getNuitsNonTraitees().subscribe({
       next: (res: {nuit_etude? : []}) => {
         this.NuitsNontraitees.set(res["nuit_etude"]);
-       console.log(res["nuit_etude"]);
+        console.log(res["nuit_etude"]);
       },
       error: err => console.error(err)
     });
   }
-
+  
   lancerEtl(id_nuit: number, id_medecin: number,commentaire_medical:string) {
-     this.isLoading = true;
+    this.isLoading = true;
     return this.http.post('http://localhost:3000/lancer-etl-operateur',
       {
         "id_nuit": id_nuit,
         "id_medecin": id_medecin,
         "commentaire_medical" : commentaire_medical
       }).subscribe({  //subscribe callback, envoie de la requete
-
+        
         next: result => {  //en cas de reussite 
           this.result.set(result)
-           this.isLoading = false;
+          this.isLoading = false;
+          this.listerNuitsNonTraitees()
         },
         error: err => {
           console.error(err);
           this.isLoading = false;
           this.result.set({
-          "success": false,
-          "message": "Erreur lors de l'exécution du script Python"
-        });
+            "success": false,
+            "message": "Erreur lors de l'exécution du script Python"
+          });
         }
       });
+    }
+    
   }
+
   
-}
-
-
+  
