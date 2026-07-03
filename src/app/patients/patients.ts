@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { PatientsService } from '../patients-service';
 
 @Component({
@@ -7,9 +7,13 @@ import { PatientsService } from '../patients-service';
   templateUrl: './patients.html',
   styleUrl: './patients.css',
 })
-export class Patients {
+export class Patients implements OnInit {
   constructor(private patientsService : PatientsService) { };
   
+  ngOnInit(): void {
+    this.listerPatients();
+  }
+
   patients = signal<any | null>(null);
 
   listerPatients() {

@@ -11,7 +11,7 @@ import { NgClass, NgIf } from '@angular/common';
   templateUrl: './resultats_nuits.html',
   styleUrl: './resultats_nuits.scss',
 })
-export class ResultatsNuits {
+export class ResultatsNuits implements OnInit {
     result = signal<any>(null); // Signal qui accepte tout
 
   constructor(private nuitService : NuitService, private http: HttpClient) { };
@@ -23,7 +23,10 @@ export class ResultatsNuits {
         window.open('http://localhost:8501/','_blank')
     }
 
-  
+  ngOnInit(): void {
+    this.listerNuitsNonTraitees();
+    this.listerMedecins();
+  }
 
   medecins = signal<any | null>(null);
    

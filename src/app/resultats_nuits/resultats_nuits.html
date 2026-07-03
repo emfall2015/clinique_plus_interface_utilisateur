@@ -45,7 +45,6 @@
   <label for="nuitSelect"> Selectionner une nuit à traiter </label>
   <select
     id="nuitSelect"
-    (focus)="listerNuitsNonTraitees()"
     [(ngModel)]="inputIdNuit">
 
     <option value="">Choisir l'identifiant de la nuit</option>
@@ -61,7 +60,6 @@
   <label for="medecinSelect">Sélectionner un médecin validateur </label>
   <select
     id="medecinSelect"
-    (focus)="listerMedecins()"
     [(ngModel)]="inputIdMedecin">
 
     <option value="">Choisir le médecin validateur</option>
