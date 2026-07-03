@@ -26,7 +26,7 @@
       <tr>
           <td>{{ patient.nom }}</td>
           <td>{{ patient.prenom }}</td>
-          <td>{{ patient.date_naissance }}</td>
+          <td>{{ patient.date_naissance | date:'yyyy-MM-dd' }}</td>
           <td>{{ patient.sexe }}</td>
           <td>{{ patient.adresse }}</td>
           <td>{{ patient.telephone }}</td>

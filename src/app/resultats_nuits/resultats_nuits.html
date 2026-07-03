@@ -33,7 +33,7 @@
           <td>{{ nuit.id_nuit }}</td>
           <td>{{ nuit.nom }}</td>
           <td>{{ nuit.prenom }}</td>
-          <td>{{ nuit.date_nuit }}</td>
+          <td>{{ nuit.date_nuit | date:'yyyy-MM-dd'}}</td>
           <td>{{ nuit.type_etude }}</td>
           <td>{{ nuit.notes_techniques }}</td>
         </tr>
@@ -109,6 +109,4 @@
   [ngClass]="res.success ? 'message-resultat-success' : 'message-resultat-fail'">
 
   {{ res.message }}
-
-  listerNuitsNonTraitees()
 </p>

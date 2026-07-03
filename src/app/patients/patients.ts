@@ -1,9 +1,10 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { PatientsService } from '../patients-service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-patients',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './patients.html',
   styleUrl: './patients.css',
 })

@@ -3,11 +3,11 @@ import { NuitService } from '../nuit-service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { NgClass, NgIf } from '@angular/common';
+import { DatePipe, NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-resultats-nuits',
-  imports: [FormsModule,RouterOutlet,RouterLink,NgClass,NgIf],
+  imports: [FormsModule,RouterOutlet,RouterLink,NgClass,NgIf, DatePipe],
   templateUrl: './resultats_nuits.html',
   styleUrl: './resultats_nuits.scss',
 })
@@ -63,7 +63,9 @@ export class ResultatsNuits implements OnInit {
         next: result => {  //en cas de reussite 
           this.result.set(result)
           this.isLoading = false;
-          this.listerNuitsNonTraitees()
+          this.listerNuitsNonTraitees();
+          this.inputIdMedecin = 0
+          this.commentaire = ''
         },
         error: err => {
           console.error(err);
