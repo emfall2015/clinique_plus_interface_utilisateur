@@ -2,7 +2,9 @@
 
     <nav class="nav-center">
         <a routerLink="/">Accueil</a>
-        <a routerLink="/about">À propos</a>
+            @if(userService.recupererUser()) {
+        <a routerLink="/layout">Dashboard</a>
+        }
              @if(!userService.recupererUser()){
         <a routerLink="/login" class="btn-login">Connexion</a>
              }
