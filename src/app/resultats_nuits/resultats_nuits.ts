@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe, NgClass, NgIf } from '@angular/common';
+import { UserService } from '../user-service';
 
 @Component({
   selector: 'app-resultats-nuits',
@@ -14,14 +15,21 @@ import { DatePipe, NgClass, NgIf } from '@angular/common';
 export class ResultatsNuits implements OnInit {
     result = signal<any>(null); // Signal qui accepte tout
 
-  constructor(private nuitService : NuitService, private http: HttpClient) { };
+  constructor(private nuitService : NuitService, private http: HttpClient,protected userService: UserService) { };
    commentaire: string = '';
    inputIdNuit : number =0;
    inputIdMedecin : number =0;
    isLoading = false;
-   ouvrirAppli(){
-        window.open('http://localhost:8501/','_blank')
-    }
+    
+  ouvrirAppli(){
+    /*fetch("http://localhost:5000/launch/appli")*/
+    window.open("http://localhost:8501", "_blank")
+}
+
+ouvrirDashboardCpap(){
+    /*fetch("http://localhost:5000/launch/cpap")*/
+    window.open("http://localhost:8502", "_blank")
+}
 
   ngOnInit(): void {
     this.listerNuitsNonTraitees();

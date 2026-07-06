@@ -29,4 +29,7 @@ export class UserService {
   recupererUser() {
     return this.user();
   }
+clearUser(){
+  this.user.set(null);
+}
 }

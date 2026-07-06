@@ -3,9 +3,25 @@
     <nav class="nav-center">
         <a routerLink="/">Accueil</a>
         <a routerLink="/about">À propos</a>
+             @if(!userService.recupererUser()){
         <a routerLink="/login" class="btn-login">Connexion</a>
+             }
     </nav>
 
+    <!-- USER À DROITE -->
+     @if(userService.recupererUser()){
+    <div class="right">
+        <div class="user-info">
+            <span>
+               Bonjour {{ userService.recupererUser()?.nom }}
+                {{ userService.recupererUser()?.prenom }}
+            </span>
+            <div class="avatar">
+                {{ userService.recupererUser()?.prenom?.charAt(0)?.toUpperCase() }}
+            </div>
+        </div>
+    </div>
+}
 </header>
 
 <router-outlet></router-outlet>

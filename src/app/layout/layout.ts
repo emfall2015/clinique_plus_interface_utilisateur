@@ -10,6 +10,9 @@ import { UserService } from '../user-service';
 })
 export class Layout {
   constructor(protected userService: UserService) { // injection du service UserService}
-
-  } 
+  }
+  
+    logout() {
+    this.userService.clearUser();
+} 
 }
