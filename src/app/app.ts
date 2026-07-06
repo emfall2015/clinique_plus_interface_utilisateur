@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Login } from './login/login';
+import { UserService } from './user-service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +11,6 @@ import { Login } from './login/login';
 })
 export class App {
   protected readonly title = signal('clinique_plus_interface_utilisateur');
+    constructor(protected userService: UserService) { }// injection du service UserService}
+  
 }

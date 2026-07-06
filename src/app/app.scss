@@ -3,239 +3,168 @@
   width: 100%;
 }
 
-/* Barre de navigation */
+/* =========================
+   NAVBAR
+========================= */
 
-nav {
+.navbar {
+  position: relative;
+
   display: flex;
   align-items: center;
-  justify-content: center;
 
-  gap: 30px;
-
-  padding: 20px 40px;
+  height: 90px;
+  padding: 0 40px;
 
   background: rgba(255, 255, 255, 0.35);
-
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
-  box-shadow: 
-    0 5px 20px rgba(0, 0, 0, 0.15);
-
-  font-family: Arial, sans-serif;
-
-  position: relative;
-  z-index: 10;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* =========================
+   MENU CENTRÉ PARFAIT
+========================= */
 
-/* Liens Accueil + À propos */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
-nav a {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
 
+/* liens */
+.nav-center a {
   text-decoration: none;
-
   color: #1e293b;
-
   font-size: 18px;
-
   font-weight: 600;
 
   padding: 8px 5px;
+  position: relative;
 
   transition: all 0.3s ease;
-
-  position: relative;
 }
 
-
-/* Animation sous les liens */
-
-nav a:not(:last-child)::after {
-
+/* underline animation (sauf bouton connexion) */
+.nav-center a:not(.btn-login)::after {
   content: "";
-
   position: absolute;
-
   left: 0;
-
   bottom: 0;
 
   width: 0%;
-
   height: 3px;
 
   background: #2563eb;
-
   border-radius: 10px;
 
   transition: 0.3s ease;
 }
 
-
-nav a:not(:last-child):hover::after {
-
+.nav-center a:not(.btn-login):hover::after {
   width: 100%;
 }
 
-
-nav a:not(:last-child):hover {
-
+.nav-center a:not(.btn-login):hover {
   color: #2563eb;
-
   transform: translateY(-2px);
 }
 
+/* =========================
+   BOUTON CONNEXION
+========================= */
 
-
-/* Bouton Connexion */
-
-nav a:last-child {
-
+.btn-login {
   padding: 12px 32px;
-
   border-radius: 30px;
 
-
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #38bdf8
-  );
-
-
-  color: white;
-
-  font-size: 17px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: white !important;
 
   font-weight: bold;
+  font-size: 17px;
 
-
-  box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.4);
-
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 
   transition: all 0.3s ease;
 }
 
+.btn-login:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.6);
+}
 
+/* =========================
+   USER DROITE
+========================= */
 
-nav a:last-child:hover {
+.right {
+  margin-left: auto;
 
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: #2563eb;
   color: white;
 
-  transform: translateY(-3px) scale(1.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
-  box-shadow:
-    0 12px 25px rgba(37, 99, 235, 0.6);
-
+  font-weight: bold;
+  font-size: 16px;
 }
 
-
-
-/* Séparation */
-
-hr {
-
-  border: none;
-
-  height: 1px;
-
-  background: rgba(0,0,0,0.15);
-
-  margin: 0;
-}
-
-
-
-/* Responsive mobile */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 600px) {
-
-
-  nav {
-
+  .navbar {
     flex-direction: column;
-
-    gap: 20px;
-
-    padding: 25px;
-
+    height: auto;
+    padding: 20px;
   }
 
-
-  nav a {
-
-    font-size: 16px;
-
-  }
-
-
-  nav a:last-child {
-
-    width: 80%;
-
-    text-align: center;
-
-  }
-
-}
-
-.sidebar {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .menu {
-    flex-direction: row;
+  .nav-center {
+    position: static;
+    transform: none;
+    justify-content: center;
     flex-wrap: wrap;
   }
-/*
-  .navbar{
 
-    height:80px;
-
-    background:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-}*/
-
-.nav-center{
-
-    display:flex;
-
-    gap:40px;
-
-    align-items:center;
-}
-
-.nav-center a{
-
-    text-decoration:none;
-
-    color:#222;
-
-    font-weight:600;
-}
-
-.btn-login{
-
-    background:linear-gradient(90deg,#2f63f2,#43b7f7);
-
-    color:white!important;
-
-    padding:15px 40px;
-
-    border-radius:40px;
+  .right {
+    margin-left: 0;
+    justify-content: center;
+    margin-top: 10px;
+  }
 }
