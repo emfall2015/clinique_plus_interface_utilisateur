@@ -1,6 +1,7 @@
 .sidebar{
 
     width:260px;
+    height:fit-content;
     background:white;
     margin:20px;
     border-radius:30px;
@@ -119,7 +120,8 @@
 }
 .layout{
     display:flex;
-    height:calc(100vh - 80px);
+    /* height:calc(100vh - 80px); */
+    min-height: auto; 
     background:#eef5ff;
 }
 .sidebar a{
@@ -166,3 +168,26 @@ nav{
 .logout:hover{
     background:#ffeaea;
 }
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #6b7280;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+nav a.active {
+    background: #e0e7ff;
+    color: #4f46e5;
+    font-weight: 600;
+}
+

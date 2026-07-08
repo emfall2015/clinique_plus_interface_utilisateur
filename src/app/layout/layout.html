@@ -7,9 +7,7 @@
         <div class="logo">
             CliniquePlus
         </div>
-
         <nav>
-
             <a routerLink="/layout/dashboard" routerLinkActive="active">
                 <span class="material-icons">dashboard</span> Dashboard
             </a>
@@ -17,38 +15,30 @@
             <a routerLink="/layout/resultats-nuits" routerLinkActive="active">
                 <span class="material-icons">assignment</span> Résultats nuits
             </a>
-
-            <a routerLink="/layout/patients" routerLinkActive="active">
+             <a routerLink="/layout/patients" routerLinkActive="active">
                 <span class="material-icons">groups</span> Patients
             </a>
-            <a routerLink="" routerLinkActive="active">
+            <a routerLink="#" routerLinkActive="active">
+                <span class="material-icons">event</span> Rendez vous
+            </a>
+           
+            <a routerLink="#" routerLinkActive="active">
+                <span class="material-icons">folder</span> Dossiers
+            </a>
+            <a routerLink="#" routerLinkActive="active">
+                <span class="material-icons">message</span> Messages
+            </a>
+            <a routerLink="#" routerLinkActive="active">
+                <span class="material-icons">bar_chart</span> Statistiques
+            </a>
+
+            <a routerLink="" routerLinkActive="" (click)="logout()">
                 <span class="material-icons">logout</span> Déconnexion
             </a>
         </nav>
     </aside>
 
     <main class="content">
-
-        <header class="topbar">
-
-            <div></div>
-
-            <div class="user">
-
-                <span>
-
-                    {{ userService.recupererUser()?.nom }}
-                    {{ userService.recupererUser()?.prenom }}
-                </span>
-
-                <div class="avatar">
-                    {{ userService.recupererUser()?.prenom.charAt(0).toUpperCase() }}
-                </div>
-
-            </div>
-
-        </header>
-
         <router-outlet></router-outlet>
 
     </main>

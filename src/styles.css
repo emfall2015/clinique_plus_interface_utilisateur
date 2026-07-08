@@ -9,3 +9,39 @@ body{
 *{
     font-family:'Poppins',sans-serif;
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.page-content {
+  flex: 1;
+}
+
+
+.footer {
+  background: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
